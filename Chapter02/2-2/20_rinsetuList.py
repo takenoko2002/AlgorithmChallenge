@@ -24,10 +24,23 @@ G = [ [] for row in range(V)]
 for i in range(E):
     #sからtへの辺を張る
     s,t = map(int,input().split())
-    G[s].append(t)
-    """
-    無向グラフの場合は、さらにtからsに辺を張る(お互いに張り合う)
-    G[t].append(s)
-    """
-
+    G[s].append(t)    
+    #無向グラフの場合は、さらにtからsに辺を張る(お互いに張り合う)
+    #G[t].append(s)
+    
 print(G)
+
+"""
+#重み付きグラフの格納
+for i in range(E):
+    #sからtへコストがcの辺を張る
+    s,t,c = map(int,input().split())
+    G[s].append(edge(t,c))
+    #無向グラフ
+    #G[t].append(edge(s,c))
+
+#重み付き無向グラフの出力
+for i in range(len(G)):
+    for j in range(len(G[i])):
+            print(i,G[i][j].to,G[i][j].cost)
+"""
